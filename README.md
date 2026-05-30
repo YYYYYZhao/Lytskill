@@ -5,18 +5,41 @@
 - `lyt-product-selection`：选品诊断、候选品筛选和低成本验证方案。
 - `lyt-data-analysis`：电商数据诊断，基于 GMV 拆解定位问题，并给出可执行的下一步动作。
 
-## 安装两个 Skills
+## 如何安装 Lytskill
 
-运行下面这条命令，会自动把两个 skill 安装到 Codex 的全局 skills 目录 `~/.codex/skills`，不需要手动复制文件。
-
-如果本地已经安装过旧版本，这条命令会先删除旧版本，再安装 GitHub 上的最新版本：
+#### Claude Code
 
 ```bash
-rm -rf ~/.codex/skills/lyt-product-selection ~/.codex/skills/lyt-data-analysis && \
-python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo YYYYYZhao/Lytskill \
-  --path skills/lyt-product-selection skills/lyt-data-analysis \
-  --dest ~/.codex/skills
+claude plugin marketplace add YYYYYZhao/Lytskill
+claude plugin install lyt@lytskill
 ```
 
-安装完成后，重新打开 Codex，让新 skill 被加载。
+#### 通用安装方式（适用于 Codex / Claude Code）
+
+```bash
+npx -y skills add YYYYYZhao/Lytskill -g --all
+```
+
+#### Trae Solo
+
+Trae Solo 一个 zip 装一个 skill。从 [GitHub Releases](https://github.com/YYYYYZhao/Lytskill/releases) 下载最新的 `lytskill-版本号.zip`，解压后里面是 2 个独立的 skill zip（每个 zip 解压后根级是 `SKILL.md`），逐个拖进 Trae Solo 的「上传技能」窗口即可。
+
+如果想本地构建，运行 `bash tools/build-skills.sh`，产物在 `dist/skills/`。
+
+## 如何更新 Lytskill
+
+#### Claude Code 插件市场安装的用户
+
+```bash
+claude plugin marketplace update lytskill
+claude plugin update lyt@lytskill
+/reload-plugins
+```
+
+#### 通过 `npx skills add` 安装的用户
+
+重新运行一次同样的命令即可。安装和更新用的是同一条命令。
+
+```bash
+npx -y skills add YYYYYZhao/Lytskill -g --all
+```

@@ -2,3 +2,6 @@
 .env
 *.log
 __pycache__/
+dist/
+.agents/
+skills-lock.json
