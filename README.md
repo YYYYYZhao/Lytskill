@@ -1,18 +1,18 @@
-# lyt-skills
+# Lytskill
 
-Two Codex skills for TikTok Shop and ecommerce work.
+两个用于 TikTok Shop 和电商工作的 Codex skills。
 
-- `lyt-product-selection`: product selection diagnosis, candidate screening, and low-cost validation planning.
-- `lyt-data-analysis`: ecommerce data diagnosis with GMV decomposition and actionable next steps.
+- `lyt-product-selection`：选品诊断、候选品筛选和低成本验证方案。
+- `lyt-data-analysis`：电商数据诊断，基于 GMV 拆解定位问题，并给出可执行的下一步动作。
 
-## Install Both Skills
+## 安装两个 Skills
 
-After this repository is published to GitHub, install both skills with one command:
+这个仓库发布到 GitHub 后，可以用一条命令同时安装两个 skill：
 
 ```bash
 python3 ~/.codex/skills/.system/skill-installer/scripts/install-skill-from-github.py \
-  --repo <github-username>/lyt-skills \
+  --repo YYYYYZhao/Lytskill \
   --path skills/lyt-product-selection skills/lyt-data-analysis
 ```
 
-Restart Codex after installation.
+安装完成后，重启 Codex。
