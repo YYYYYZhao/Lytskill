@@ -4,19 +4,20 @@
     "name": "YYYYYZhao"
   },
   "metadata": {
-    "description": "Lytskill：TikTok Shop 和跨境电商问题定位、选品、数据分析 Agent skill",
-    "version": "1.1.0"
+    "description": "Lytskill：TikTok Shop 和跨境电商问题追问、问题定位、选品、数据分析 Agent skill",
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "lyt",
-      "description": "Lytskill 工具包。包含问题定位、选品诊断和电商数据分析三个 skill。",
+      "description": "Lytskill 工具包。包含问题追问、问题定位、选品诊断和电商数据分析四个 skill。",
       "source": "./",
       "strict": false,
-      "version": "1.1.0",
+      "version": "1.2.0",
       "category": "ecommerce",
-      "keywords": ["tiktok-shop", "ecommerce", "problem-diagnosis", "product-selection", "data-analysis", "chinese"],
+      "keywords": ["tiktok-shop", "ecommerce", "question-clarifier", "problem-diagnosis", "product-selection", "data-analysis", "chinese"],
       "skills": [
+        "./skills/lyt-problem-clarifier",
         "./skills/lyt-problem-diagnosis",
         "./skills/lyt-product-selection",
         "./skills/lyt-data-analysis"
