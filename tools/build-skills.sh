@@ -51,8 +51,9 @@ done
 cat > "$INNER_DIR/README.md" <<EOF
 # Lytskill ${VERSION}
 
-Trae Solo 一个 zip 装一个 skill。本压缩包里有 2 个独立的 skill zip：
+Trae Solo 一个 zip 装一个 skill。本压缩包里有 3 个独立的 skill zip：
 
+- lyt-problem-diagnosis.zip
 - lyt-product-selection.zip
 - lyt-data-analysis.zip
 

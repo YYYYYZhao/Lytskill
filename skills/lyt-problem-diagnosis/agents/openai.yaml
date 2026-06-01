@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-problem-diagnosis"
+  short_description: "跨境电商问题定位。不出单、没流量、广告跑不出去。"
+  default_prompt: "/lyt-problem-diagnosis"
