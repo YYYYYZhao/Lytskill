@@ -1,6 +1,6 @@
 # Lytskill
 
-两个用于 TikTok Shop 和电商工作的 Codex skills。
+用于跨境电商业务的skills。
 
 - `lyt-product-selection`：选品诊断、候选品筛选和低成本验证方案。
 - `lyt-data-analysis`：电商数据诊断，基于 GMV 拆解定位问题，并给出可执行的下一步动作。
