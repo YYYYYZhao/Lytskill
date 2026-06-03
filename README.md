@@ -6,11 +6,19 @@ Lytskill 是一组面向 TikTok Shop / 跨境电商运营的 Agent skills。
 
 可在 Claude Code、Codex、Cursor、Trae Solo 等支持 skill / system prompt 的 Agent 上使用。
 
-**最新版本：v1.2.1**
+**最新版本：v1.3.0**
+
+**v1.3.0 更新：**新增 `lyt` 主路由 skill。用户可以先调用 `/lyt`，由它判断问题属于选品、问题追问还是数据分析，再自动进入对应 skill。
+
+这次更新集中在 3 个方向：
+
+- 主入口：新增 `lyt`，作为跨境电商/TikTok Shop skill 路由入口。
+- 自动路由：按用户问题自动匹配 `lyt-product-selection`、`lyt-problem-clarifier` 或 `lyt-data-analysis`。
+- 业务边界：非业务、非电商、生活百科或专业护理问题会直接拒绝，不强行套进选品、广告或数据分析。
 
 **v1.2.1 更新：**重点强化 `lyt-problem-clarifier` 和 `lyt-data-analysis` 对 TikTok Shop 商品成交额最大化广告，也就是 GMV Max 低消耗场景的判断边界，同时补全本仓库 README 的 skill 使用说明。
 
-这次更新集中在 5 个方向：
+v1.2.1 集中在 5 个方向：
 
 - GMV Max 低消耗：不再套普通广告的地区、人群、出价方式、投放目标逻辑，改为围绕预算、投入产出比目标、产品选择、素材选择和实际消耗数据判断。
 - 广告状态追问：用户没有主动提到审核中、受限、拒审或异常提示时，默认按正常投放中处理，不主动追问广告状态。
@@ -73,6 +81,7 @@ dist/skills/
 
 | Skill | 用途 | 适合场景 |
 |---|---|---|
+| `lyt` | 主路由 | 用户不确定该用哪个 skill 时，先判断业务边界，再路由到选品、问题追问或数据分析 |
 | `lyt-problem-clarifier` | 问题追问 | 用户只给一句「为什么不出单 / 为什么没流量 / 为什么广告跑不出去」时，先追问动作和数据断点 |
 | `lyt-product-selection` | 选品诊断 | 从 0 选品、类目拆解、候选品筛选、单品能不能测、表格批量筛选 |
 | `lyt-data-analysis` | 数据分析诊断 | 根据截图、CSV/XLSX、后台数据、业务描述，拆解 GMV 变量并输出下一步动作 |
@@ -84,6 +93,8 @@ Lytskill/
 ├── README.md
 ├── VERSION
 ├── skills/
+│   ├── lyt/
+│   │   └── SKILL.md
 │   ├── lyt-problem-clarifier/
 │   │   └── SKILL.md
 │   ├── lyt-product-selection/
@@ -95,6 +106,14 @@ Lytskill/
 ```
 
 ## 推荐使用顺序
+
+```text
+不知道该用哪个
+  ↓
+lyt
+  ↓
+自动路由到选品 / 问题追问 / 数据分析
+```
 
 ```text
 模糊问题
