@@ -8,13 +8,14 @@ Lytskill 是一组面向 TikTok Shop / 跨境电商运营的 Agent skills。
 
 **最新版本：v1.3.0**
 
-**v1.3.0 更新：**新增 `lyt` 主路由 skill。用户可以先调用 `/lyt`，由它判断问题属于选品、流量逻辑、问题追问还是数据分析，再自动进入对应 skill。
+**v1.3.0 更新：**同步 lyt 主线 skill 结构，新增 `lyt-traffic-logic`，并把各 skill 的参考知识文件一起纳入安装与打包。
 
-这次更新集中在 3 个方向：
+这次更新集中在 4 个方向：
 
-- 主入口：新增 `lyt`，作为跨境电商/TikTok Shop skill 路由入口。
-- 自动路由：按用户问题自动匹配 `lyt-product-selection`、`lyt-traffic-logic`、`lyt-problem-clarifier` 或 `lyt-data-analysis`。
-- 业务边界：非业务、非电商、生活百科或专业护理问题会直接拒绝，不强行套进选品、广告或数据分析。
+- 主线统一：同步 `lyt`、`lyt-product-selection`、`lyt-traffic-logic`、`lyt-problem-clarifier`、`lyt-data-analysis` 五个主线 skill。
+- 流量逻辑：新增 `lyt-traffic-logic`，用于讲清商品卡搜索、短视频推荐、广告/GMV Max、冷启动和成交链路的流量分配逻辑。
+- 知识内置：把选品、问题追问、流量逻辑、数据分析的参考知识整理进各自 `references/`，用户安装后不依赖我的本地内容结构。
+- 打包修正：构建 Trae Solo 压缩包时会同时带上 `SKILL.md`、`references/` 和 `agents/`，避免只打包主文件导致知识缺失。
 
 ## 安装与更新
 
