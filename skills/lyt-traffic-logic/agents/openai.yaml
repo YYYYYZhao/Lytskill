@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-traffic-logic"
+  short_description: "流量分配逻辑。解释店铺、商品和平台为什么给或不给流量。"
+  default_prompt: "/lyt-traffic-logic"

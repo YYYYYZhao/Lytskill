@@ -1,4 +1,4 @@
 interface:
   display_name: "lyt-product-selection"
-  short_description: "选品指导。不知的怎么选品、有一个产品需要验证。可帮你分析诊断选品逻辑。"
+  short_description: "选品指导。选类目、筛候选品、验证商品和设计低成本测品。"
   default_prompt: "/lyt-product-selection"

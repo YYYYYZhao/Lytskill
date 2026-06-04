@@ -8,12 +8,12 @@ Lytskill 是一组面向 TikTok Shop / 跨境电商运营的 Agent skills。
 
 **最新版本：v1.3.0**
 
-**v1.3.0 更新：**新增 `lyt` 主路由 skill。用户可以先调用 `/lyt`，由它判断问题属于选品、问题追问还是数据分析，再自动进入对应 skill。
+**v1.3.0 更新：**新增 `lyt` 主路由 skill。用户可以先调用 `/lyt`，由它判断问题属于选品、流量逻辑、问题追问还是数据分析，再自动进入对应 skill。
 
 这次更新集中在 3 个方向：
 
 - 主入口：新增 `lyt`，作为跨境电商/TikTok Shop skill 路由入口。
-- 自动路由：按用户问题自动匹配 `lyt-product-selection`、`lyt-problem-clarifier` 或 `lyt-data-analysis`。
+- 自动路由：按用户问题自动匹配 `lyt-product-selection`、`lyt-traffic-logic`、`lyt-problem-clarifier` 或 `lyt-data-analysis`。
 - 业务边界：非业务、非电商、生活百科或专业护理问题会直接拒绝，不强行套进选品、广告或数据分析。
 
 ## 安装与更新
@@ -63,6 +63,7 @@ dist/skills/
 ## 适合解决什么问题
 
 - 不出单、没流量、广告低消耗、突然下滑，不知道先查哪里
+- 不知道平台流量是怎么分配的，想先搞清楚搜索、推荐、广告和成交链路的底层逻辑
 - 不知道选什么产品，或已有候选品但不知道哪个值得测
 - 有表格、截图、后台数据，但不知道问题到底卡在曝光、点击、成交还是客单价
 - 想训练 Agent 按跨境电商业务逻辑追问、诊断和输出行动方案
@@ -71,8 +72,9 @@ dist/skills/
 
 | Skill | 用途 | 适合场景 |
 |---|---|---|
-| `lyt` | 主路由 | 用户不确定该用哪个 skill 时，先判断业务边界，再路由到选品、问题追问或数据分析 |
+| `lyt` | 主路由 | 用户不确定该用哪个 skill 时，先判断业务边界，再路由到选品、流量逻辑、问题追问或数据分析 |
 | `lyt-problem-clarifier` | 问题追问 | 用户只给一句「为什么不出单 / 为什么没流量 / 为什么广告跑不出去」时，先追问动作和数据断点 |
+| `lyt-traffic-logic` | 流量分配逻辑 | 用户想理解店铺、商品、商品卡、短视频、广告为什么有流量或没流量时，先讲清底层分配逻辑 |
 | `lyt-product-selection` | 选品诊断 | 从 0 选品、类目拆解、候选品筛选、单品能不能测、表格批量筛选 |
 | `lyt-data-analysis` | 数据分析诊断 | 根据截图、CSV/XLSX、后台数据、业务描述，拆解 GMV 变量并输出下一步动作 |
 
@@ -86,6 +88,8 @@ Lytskill/
 │   ├── lyt/
 │   │   └── SKILL.md
 │   ├── lyt-problem-clarifier/
+│   │   └── SKILL.md
+│   ├── lyt-traffic-logic/
 │   │   └── SKILL.md
 │   ├── lyt-product-selection/
 │   │   └── SKILL.md
@@ -102,7 +106,7 @@ Lytskill/
   ↓
 lyt
   ↓
-自动路由到选品 / 问题追问 / 数据分析
+自动路由到选品 / 流量逻辑 / 问题追问 / 数据分析
 ```
 
 ```text

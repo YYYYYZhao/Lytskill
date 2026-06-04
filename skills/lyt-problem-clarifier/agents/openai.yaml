@@ -1,4 +1,4 @@
 interface:
   display_name: "lyt-problem-clarifier"
-  short_description: "问题追问。先问动作和数据断点，再定位问题。"
+  short_description: "问题追问。先界定问题，再追问场景、动作和数据断点。"
   default_prompt: "/lyt-problem-clarifier"

@@ -24,7 +24,7 @@ build_one() {
   name="$(basename "$skill_dir")"
   stage_dir="$(mktemp -d)"
 
-  cp "$skill_dir/SKILL.md" "$stage_dir/SKILL.md"
+  cp -R "$skill_dir"/. "$stage_dir"/
 
   python3 - "$stage_dir" "$INNER_DIR/${name}.zip" <<'PY'
 import os
@@ -51,10 +51,11 @@ done
 cat > "$INNER_DIR/README.md" <<EOF
 # Lytskill ${VERSION}
 
-Trae Solo 一个 zip 装一个 skill。本压缩包里有 4 个独立的 skill zip：
+Trae Solo 一个 zip 装一个 skill。本压缩包里有 5 个独立的 skill zip：
 
 - lyt.zip
 - lyt-problem-clarifier.zip
+- lyt-traffic-logic.zip
 - lyt-product-selection.zip
 - lyt-data-analysis.zip
 
