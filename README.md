@@ -6,9 +6,9 @@ Lytskill 是一组面向 TikTok Shop / 跨境电商运营的 Agent skills。
 
 可在 Claude Code、Codex、Cursor、Trae Solo 等支持 skill / system prompt 的 Agent 上使用。
 
-**最新版本：v1.3.0**
+**最新版本：v1.4.0**
 
-**v1.3.0 更新：**同步 lyt 主线 skill 结构，新增 `lyt-traffic-logic`，并把各 skill 的参考知识文件一起纳入安装与打包。
+**v1.4.0 更新：**同步 lyt 主线 skill 结构，新增 `lyt-traffic-logic`，并把各 skill 的参考知识文件一起纳入安装与打包。
 
 这次更新集中在 4 个方向：
 
