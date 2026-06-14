@@ -33,7 +33,14 @@ jobs:
         run: |
           set -euo pipefail
           VERSION="$(tr -d '[:space:]' < VERSION)"
+          awk -v version="$VERSION" '
+            $0 == "## v" version " 更新内容" { capture = 1; next }
+            capture && $0 == "## 安装与更新" { exit }
+            capture { print }
+          ' README.md > /tmp/release-notes.md
+          test -s /tmp/release-notes.md
+          printf '\n压缩包：`lytskill-%s.zip`\n' "$VERSION" >> /tmp/release-notes.md
           gh release create "${GITHUB_REF_NAME}" \
-            --title "${GITHUB_REF_NAME}" \
-            --generate-notes \
+            --title "Lytskill ${GITHUB_REF_NAME}" \
+            --notes-file /tmp/release-notes.md \
             "dist/skills/lytskill-${VERSION}.zip"
