@@ -15,6 +15,7 @@ mkdir -p "$OUT_DIR"
 
 INNER_DIR="$(mktemp -d)"
 trap 'rm -rf "$INNER_DIR"' EXIT
+SKILL_NAMES=()
 
 build_one() {
   local skill_dir="$1"
@@ -45,22 +46,26 @@ PY
 }
 
 for skill_md in "$ROOT_DIR"/skills/*/SKILL.md; do
-  build_one "$(dirname "$skill_md")"
+  skill_dir="$(dirname "$skill_md")"
+  SKILL_NAMES+=("$(basename "$skill_dir")")
+  build_one "$skill_dir"
 done
 
-cat > "$INNER_DIR/README.md" <<EOF
+{
+  cat <<EOF
 # Lytskill ${VERSION}
 
-Trae Solo 一个 zip 装一个 skill。本压缩包里有 5 个独立的 skill zip：
+Trae Solo 一个 zip 装一个 skill。本压缩包里有 ${#SKILL_NAMES[@]} 个独立的 skill zip：
 
-- lyt.zip
-- lyt-problem-clarifier.zip
-- lyt-traffic-logic.zip
-- lyt-product-selection.zip
-- lyt-data-analysis.zip
+EOF
+  for name in "${SKILL_NAMES[@]}"; do
+    echo "- ${name}.zip"
+  done
+  cat <<'EOF'
 
 每个 zip 解压后根级是 SKILL.md，可以逐个拖进 Trae Solo 的「上传技能」窗口。
 EOF
+} > "$INNER_DIR/README.md"
 
 python3 - "$INNER_DIR" "$OUT_DIR/lytskill-${VERSION}.zip" <<'PY'
 import os

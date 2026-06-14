@@ -1,4 +1,4 @@
 interface:
   display_name: "lyt-problem-clarifier"
-  short_description: "问题追问。先界定问题，再追问场景、动作和数据断点。"
-  default_prompt: "/lyt-problem-clarifier"
+  short_description: "用五层漏斗检查概念、隐含假设、因果、事实前提和信息缺口。"
+  default_prompt: "使用 $lyt-problem-clarifier 帮我找到这个经营问题最前面的阻断层。"

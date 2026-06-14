@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-learning"
+  short_description: "按真实反馈连续学习，并与知识检验组成理解、检验和补缺闭环。"
+  default_prompt: "使用 $lyt-learning 带我学习一个业务课题，并根据反馈和检验结果继续。"

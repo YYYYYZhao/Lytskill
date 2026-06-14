@@ -1,4 +1,4 @@
 interface:
   display_name: "lyt-data-analysis"
-  short_description: "数据分析诊断。分析店铺、商品、广告、GMV、成本和利润数据。"
-  default_prompt: "/lyt-data-analysis"
+  short_description: "分析文字、截图、表格和后台数据，定位问题并给出行动方案。"
+  default_prompt: "使用 $lyt-data-analysis 分析我提供的数据或附件，完成口径校验、问题定位和行动建议。"

@@ -1,4 +1,4 @@
 interface:
   display_name: "lyt"
-  short_description: "跨境电商主入口。自动路由到选品、流量逻辑、问题追问或数据分析。"
-  default_prompt: "/lyt"
+  short_description: "跨境电商主入口，支持文字与附件并路由全部 lyt 能力。"
+  default_prompt: "使用 $lyt 判断我的跨境电商问题该交给哪个 skill，并继续执行。"

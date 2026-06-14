@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-knowledge-check"
+  short_description: "用真实场景题检验结论、证据、因果、边界和最小验证动作。"
+  default_prompt: "使用 $lyt-knowledge-check 出一道场景题，检验我的跨境电商推理能力。"
