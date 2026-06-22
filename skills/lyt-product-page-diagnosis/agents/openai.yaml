@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-product-page-diagnosis"
+  short_description: "先核对页面图片与经营数据，再诊断点击、加购和下单问题。"
+  default_prompt: "使用 $lyt-product-page-diagnosis 检查我提供的商品主图或详情页。先做图片取证并追问判断所需的最小数据，证据足够后再给归因、修改优先级和验证方案。"
