@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-product-validation"
+  short_description: "验证已有产品、候选品表格和供应链资料是否值得进入测试池。"
+  default_prompt: "使用 $lyt-product-validation 判断这个产品或候选品是否值得测试，并给出最小验证方案。"

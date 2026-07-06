@@ -1,4 +1,4 @@
 interface:
   display_name: "lyt-product-selection"
-  short_description: "选类目、筛候选品、分析商品附件并设计低成本验证方案。"
-  default_prompt: "使用 $lyt-product-selection 判断我的选品阶段，并分析候选品、截图或表格。"
+  short_description: "从 0 选品、选类目、定边界，并搭建可验证的候选品池。"
+  default_prompt: "使用 $lyt-product-selection 帮我判断选品阶段、能力边界和适合建立的候选品池。"

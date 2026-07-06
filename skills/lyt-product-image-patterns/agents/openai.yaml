@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-product-image-patterns"
+  short_description: "归纳竞品和 Top 店铺主图样本，提炼可测试的主图表达公式。"
+  default_prompt: "使用 $lyt-product-image-patterns 分析这些竞品或 Top 店铺主图，提炼共性、标签和可测试主图 brief。"
