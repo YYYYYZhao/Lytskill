@@ -6,6 +6,8 @@ Lytskill 是一组面向 TikTok Shop / 跨境电商运营的 Agent skills。
 
 可在 Claude Code、Codex、Cursor、Trae Solo 等支持 skill / system prompt 的 Agent 上使用。
 
+**作者**：抖音主页：[点击打开](https://www.douyin.com/user/MS4wLjABAAAAHg0IWbUwK53zYsvxT3WNJ6HrXKOQdZOmY2XZT1M4ghNpWyyUhyC62naQI9__ISkj)
+
 **最新版本：v1.7.0**
 
 ## v1.7.0 更新内容
