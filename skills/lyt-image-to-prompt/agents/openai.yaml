@@ -1,0 +1,6 @@
+interface:
+  display_name: "lyt-image-to-prompt"
+  short_description: "从电商参考图反推提示词，并合并用户自己的产品图片。"
+  default_prompt: "使用 $lyt-image-to-prompt 分析这张电商参考图，并把我上传的产品合并成可直接使用的提示词。"
+policy:
+  allow_implicit_invocation: false

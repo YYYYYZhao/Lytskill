@@ -1,7 +1,7 @@
 ---
 name: lyt
 description: |
-  lyt 系列跨境电商主路由 skill。用户调用 /lyt、$lyt、Lyt，或提出跨境电商、TikTok Shop、从 0 选品、产品验证、商品主图与详情页、竞品/Top 主图样本归纳、经营问题追问、流量逻辑、数据分析、系统学习、知识检验相关问题时使用。先判断业务边界和用户真正要完成的任务，再路由到 lyt-product-selection、lyt-product-validation、lyt-product-page-diagnosis、lyt-product-image-patterns、lyt-problem-clarifier、lyt-traffic-logic、lyt-data-analysis、lyt-learning 或 lyt-knowledge-check。支持文字、图片/截图、CSV/XLSX 表格、PDF/文档和后台导出；附件类型只说明输入形式，不代替用户意图。
+  lyt 系列跨境电商主路由 skill。用户调用 /lyt、$lyt、Lyt，或提出跨境电商、TikTok Shop、从 0 选品、产品验证、商品主图与详情页、竞品/Top 主图样本归纳、电商参考图提示词反推与自有产品替换、经营问题追问、流量逻辑、数据分析、系统学习、知识检验相关问题时使用。先判断业务边界和用户真正要完成的任务，再路由到 lyt-product-selection、lyt-product-validation、lyt-product-page-diagnosis、lyt-product-image-patterns、lyt-image-to-prompt、lyt-problem-clarifier、lyt-traffic-logic、lyt-data-analysis、lyt-learning 或 lyt-knowledge-check。支持文字、图片/截图、CSV/XLSX 表格、PDF/文档和后台导出；附件类型只说明输入形式，不代替用户意图。
 ---
 
 # lyt：跨境电商调度台
@@ -34,6 +34,7 @@ description: |
 | 已经有具体产品、商品截图、候选品清单、1688/竞品链接或供应链资料，想判断能不能做 | `lyt-product-validation` | 目标是决定「能测 / 暂缓 / 不建议做」 |
 | 检查主图、副图、详情页、商品首屏、竞品页面或多版本页面 | `lyt-product-page-diagnosis` | 目标是判断页面表达、点击理由、购买理由、信任证据和疑虑消除 |
 | 总结多个竞品、Top 店铺或高销量商品主图的共性、打法和公式 | `lyt-product-image-patterns` | 目标是归纳样本表达并生成可测试主图 brief |
+| 根据电商参考图反推提示词，或把用户自己的产品替换进参考图 | `lyt-image-to-prompt` | 目标是保留参考图构图与风格，并用用户产品重建提示词 |
 | 说没流量、不出单、低消耗、突然下滑、爆款视频不出单，但对象、动作或数据不清 | `lyt-problem-clarifier` | 目标是先把问题追问成可诊断问题 |
 | 问平台为什么给流量、搜索/推荐/广告如何分配、新店冷启动是什么逻辑 | `lyt-traffic-logic` | 目标是理解机制，不定位自己的具体问题 |
 | 提供文字指标、截图、表格、订单、广告、商品或后台数据，要复盘、对比、找问题或出报告 | `lyt-data-analysis` | 目标是用数据形成判断和行动方案 |
@@ -44,13 +45,14 @@ description: |
 
 1. 明确说「学」「继续下一篇」「学习计划」：`lyt-learning`。
 2. 明确说「考我」「检验理解」「看看我懂没懂」：`lyt-knowledge-check`。
-3. 明确要总结 Top/竞品主图共性、打法、公式或样本标签：`lyt-product-image-patterns`。
-4. 明确要看自己的主图、详情页、商品首屏、单个竞品页面或页面版本：`lyt-product-page-diagnosis`。
-5. 明确提供多商品、多广告、多日期、订单、成本、利润或后台数据并要求判断：`lyt-data-analysis`。
-6. 经营结果异常但缺对象、场景、动作或断点数据：`lyt-problem-clarifier`。
-7. 问平台机制、流量分配、冷启动、搜索/推荐/广告原理：`lyt-traffic-logic`。
-8. 做类目、供应链、找品路径或候选池决策：`lyt-product-selection`。
-9. 做具体产品、单品、候选品清单或候选品表格验证：`lyt-product-validation`。
+3. 明确要根据电商参考图反推、重建或改写图片生成提示词，或把自有产品替换进参考图：`lyt-image-to-prompt`。
+4. 明确要总结 Top/竞品主图共性、打法、公式或样本标签：`lyt-product-image-patterns`。
+5. 明确要看自己的主图、详情页、商品首屏、单个竞品页面或页面版本：`lyt-product-page-diagnosis`。
+6. 明确提供多商品、多广告、多日期、订单、成本、利润或后台数据并要求判断：`lyt-data-analysis`。
+7. 经营结果异常但缺对象、场景、动作或断点数据：`lyt-problem-clarifier`。
+8. 问平台机制、流量分配、冷启动、搜索/推荐/广告原理：`lyt-traffic-logic`。
+9. 做类目、供应链、找品路径或候选池决策：`lyt-product-selection`。
+10. 做具体产品、单品、候选品清单或候选品表格验证：`lyt-product-validation`。
 
 如果一句话同时包含「理解逻辑」和「定位自己的问题」，默认先问：
 
@@ -64,6 +66,8 @@ description: |
 - 「这个产品为什么卖不动」：判断商品是否值得测走 `lyt-product-validation`；已有经营数据要找问题走 `lyt-problem-clarifier` 或 `lyt-data-analysis`。
 - 「这张主图有没有问题」：看页面表达走 `lyt-product-page-diagnosis`；判断商品值不值得做走 `lyt-product-validation`。
 - 「这些 Top/竞品主图有什么共性」：归纳样本表达走 `lyt-product-image-patterns`；诊断自己的页面走 `lyt-product-page-diagnosis`。
+- 「照这张图写提示词」：重建单张图片的生成提示词走 `lyt-image-to-prompt`；判断页面问题走 `lyt-product-page-diagnosis`；归纳多张样本走 `lyt-product-image-patterns`。
+- 「把我的产品放进这张参考图」：保留参考图构图和风格、替换产品身份走 `lyt-image-to-prompt`；判断新图能否提升经营指标仍走 `lyt-product-page-diagnosis`。
 - 「有曝光没人点，主图是不是有问题」：有页面截图和曝光点击数据走 `lyt-product-page-diagnosis`；没有关键数据先走 `lyt-problem-clarifier`。
 - 「帮我看下为什么不出单」：只有现象、对象和动作不清走 `lyt-problem-clarifier`；有对象、时间范围、曝光、点击、加购、下单等数据走 `lyt-data-analysis`。
 - 「帮我选品」：如果没有具体产品，走 `lyt-product-selection`；如果已经有产品、候选品清单或商品截图，走 `lyt-product-validation`。
@@ -102,13 +106,14 @@ description: |
 2. 产品验证：判断已有产品或候选品能不能测
 3. 商品页诊断：检查主图、详情页和商品首屏
 4. 主图样本归纳：总结竞品或 Top 主图共性
-5. 问清问题：把没流量、不出单、低消耗追问清楚
-6. 理解流量：弄清平台为什么给或不给流量
-7. 数据分析：分析文字、截图、表格或后台数据
-8. 系统学习：连续学一个业务课题
-9. 知识检验：出题检查我的理解
+5. 图片提示词反推：反推电商参考图，并可合并自己的产品
+6. 问清问题：把没流量、不出单、低消耗追问清楚
+7. 理解流量：弄清平台为什么给或不给流量
+8. 数据分析：分析文字、截图、表格或后台数据
+9. 系统学习：连续学一个业务课题
+10. 知识检验：出题检查我的理解
 
-回 1-9 就行。
+回 1-10 就行。
 ```
 
 ## 执行方式
@@ -119,6 +124,7 @@ description: |
 - `../lyt-product-validation/SKILL.md`
 - `../lyt-product-page-diagnosis/SKILL.md`
 - `../lyt-product-image-patterns/SKILL.md`
+- `../lyt-image-to-prompt/SKILL.md`
 - `../lyt-problem-clarifier/SKILL.md`
 - `../lyt-traffic-logic/SKILL.md`
 - `../lyt-data-analysis/SKILL.md`
