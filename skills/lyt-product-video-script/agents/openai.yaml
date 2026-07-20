@@ -1,0 +1,4 @@
+interface:
+  display_name: "lyt-product-video-script"
+  short_description: "根据现有产品生成可直接拍摄、可本地化并可验证的电商短视频脚本。"
+  default_prompt: "使用 $lyt-product-video-script 根据我的产品资料生成一份可直接拍摄的电商短视频脚本。"

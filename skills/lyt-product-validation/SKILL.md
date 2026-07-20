@@ -124,6 +124,7 @@ description: |
 | 触发条件 | 下一步 |
 | --- | --- |
 | 用户还没有具体产品，只是在选方向或类目 | 转入 `lyt-product-selection` |
+| 用户明确要根据当前产品生成短视频拍摄脚本 | 转入 `lyt-product-video-script` |
 | 用户给出测试后的曝光、点击、加购、下单、成本和利润数据 | 转入 `lyt-data-analysis` |
 | 用户问平台为什么不给这个商品流量 | 机制讲解转 `lyt-traffic-logic`；具体问题定位转 `lyt-problem-clarifier` |
 | 用户要诊断主图、详情页或商品首屏表达 | 转入 `lyt-product-page-diagnosis` |

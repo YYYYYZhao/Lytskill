@@ -29,7 +29,8 @@ description: |
 - 已经有具体产品，想判断能不能做、要不要拿样或是否值得测试，转 `lyt-product-validation`
 - Top 店铺、竞品或高销量主图的批量共性归纳，转 `lyt-product-image-patterns`
 - 完整店铺、广告、GMV Max、利润或多商品数据复盘，转 `lyt-data-analysis`
-- 只问审美、品牌海报、短视频脚本或直播间画面
+- 只问审美、品牌海报或直播间画面
+- 根据具体产品生成短视频拍摄脚本，转 `lyt-product-video-script`
 
 越界时直接说明：
 
@@ -147,6 +148,7 @@ description: |
 - 没流量、不出单、低消耗但页面证据不足：转 `lyt-problem-clarifier`
 - 有完整店铺、广告、多商品、成本或利润数据：转 `lyt-data-analysis`
 - 想总结 Top/竞品主图共性、提炼主图公式：转 `lyt-product-image-patterns`
+- 想根据当前产品生成短视频分镜、台词和拍摄清单：转 `lyt-product-video-script`
 - 想直接生成或修改图片：先输出改图 brief，再调用图像工具
 
 ## 禁止事项
